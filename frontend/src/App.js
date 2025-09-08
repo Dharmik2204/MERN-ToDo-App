@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./App.css";
+
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -32,28 +34,31 @@ function App() {
   };
 
   return (
-    <div style={{ margin: "50px" }}>
-      <h1>✅ MERN To-Do List</h1>
-      <input
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Enter task"
-      />
-      <button onClick={addTodo}>Add</button>
-      <ul>
-        {todos.map((t) => (
-          <li key={t._id}>
-            <span
-              onClick={() => toggleTodo(t._id, t.done)}
-              style={{ textDecoration: t.done ? "line-through" : "none", cursor: "pointer" }}
-            >
-              {t.text}
-            </span>
-            <button onClick={() => deleteTodo(t._id)}>❌</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <div className="app-container">
+  <h1>✅ MERN To-Do List</h1>
+  <div className="app-input">
+    <input
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      placeholder="Enter task"
+    />
+    <button onClick={addTodo}>Add</button>
+  </div>
+  <ul>
+    {todos.map((t) => (
+      <li key={t._id}>
+        <span
+          onClick={() => toggleTodo(t._id, t.done)}
+          className={t.done ? "done" : ""}
+        >
+          {t.text}
+        </span>
+        <button onClick={() => deleteTodo(t._id)}>❌</button>
+      </li>
+    ))}
+  </ul>
+</div>
+
   );
 }
 

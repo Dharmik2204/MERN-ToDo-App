@@ -1,38 +1,100 @@
-.App {
+/* App.css */
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Main container */
+.app-container {
+  background: #ffffff;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Title */
+.app-container h1 {
+  margin-bottom: 20px;
+  color: #2d3436;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Input & button */
+.app-input {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.app-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.app-input button {
+  padding: 10px 15px;
+  border: none;
+  background: #0984e3;
   color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.app-input button:hover {
+  background: #74b9ff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Todo list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f2f6;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+li span {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+li span.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Delete button */
+li button {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #d63031;
+  transition: transform 0.2s;
+}
+
+li button:hover {
+  transform: scale(1.2);
 }
